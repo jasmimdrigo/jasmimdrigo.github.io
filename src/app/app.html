@@ -17,7 +17,8 @@
             <li><a href="#education" class="hover:text-amber-800">Education</a></li>
             <li><a href="#research" class="hover:text-amber-800">Research</a></li>
             <li><a href="#publications" class="hover:text-amber-800">Publications</a></li>
-            <li><a href="#experience" class="hover:text-amber-800">Experience</a></li>
+            <li><a href="#presentations" class="hover:text-amber-800">Presentations</a></li>
+            <li><a href="#experience" class="hover:text-amber-800">Teaching Experience</a></li>
             <li><a href="#skills" class="hover:text-amber-800">Skills</a></li>
             <li><a href="#contact" class="hover:text-amber-800">Contact</a></li>
           </ul>
@@ -26,16 +27,27 @@
     </header>
 
     <section id="top" class="border-b border-stone-800 bg-stone-900 text-stone-50">
-      <div class="mx-auto max-w-3xl px-6 py-20">
-        <p class="font-serif text-sm uppercase tracking-widest text-amber-400">Linguistics</p>
-        <h1 class="mt-3 font-serif text-4xl font-semibold sm:text-5xl">{{ siteContent.name }}</h1>
-        <p class="mt-3 text-lg text-stone-300">{{ siteContent.tagline }} · {{ siteContent.university }}</p>
-        <div class="mt-6 flex flex-wrap gap-x-4 gap-y-1 text-sm text-stone-400">
-          <span>{{ siteContent.location }}</span>
-          <a href="mailto:{{ siteContent.email }}" class="hover:text-amber-400">{{ siteContent.email }}</a>
-          <a [href]="siteContent.linkedinUrl" class="hover:text-amber-400">LinkedIn</a>
-          <a [href]="siteContent.cvUrl" class="hover:text-amber-400">CV (PDF)</a>
+      <div class="mx-auto flex max-w-3xl flex-col-reverse items-start gap-8 px-6 py-20 sm:flex-row sm:items-center sm:justify-between">
+        <div>
+          <p class="font-serif text-sm uppercase tracking-widest text-amber-400">Linguistics</p>
+          <h1 class="mt-3 font-serif text-4xl font-semibold sm:text-5xl">{{ siteContent.name }}</h1>
+          <p class="mt-3 text-lg text-stone-300">{{ siteContent.tagline }} · {{ siteContent.university }}</p>
+          <div class="mt-6 flex flex-wrap gap-x-4 gap-y-1 text-sm text-stone-400">
+            <span>{{ siteContent.location }}</span>
+            <a href="mailto:{{ siteContent.email }}" class="hover:text-amber-400">{{ siteContent.email }}</a>
+            <a [href]="siteContent.linkedinUrl" class="hover:text-amber-400">LinkedIn</a>
+            <a [href]="siteContent.academiaUrl" class="hover:text-amber-400">Academia.edu</a>
+            <a [href]="siteContent.blueskyUrl" class="hover:text-amber-400">Bluesky</a>
+            <a [href]="siteContent.cvUrl" class="hover:text-amber-400">CV (PDF)</a>
+          </div>
         </div>
+        @if (siteContent.photoUrl) {
+          <img
+            [src]="siteContent.photoUrl"
+            [alt]="siteContent.name"
+            class="h-28 w-28 shrink-0 rounded-full object-cover ring-2 ring-amber-400/50 sm:h-36 sm:w-36"
+          />
+        }
       </div>
     </section>
 
@@ -70,16 +82,25 @@
         </section>
 
         <section id="publications" class="scroll-mt-24">
-          <h2 class="font-serif text-2xl font-semibold text-stone-900">Publications & Presentations</h2>
+          <h2 class="font-serif text-2xl font-semibold text-stone-900">Publications</h2>
           <ul class="mt-3 space-y-3 text-stone-600">
-            @for (pub of siteContent.publications; track $index) {
-              <li>{{ pub }}</li>
+            @for (publication of siteContent.publications; track $index) {
+              <li>{{ publication }}</li>
+            }
+          </ul>
+        </section>
+
+        <section id="presentations" class="scroll-mt-24">
+          <h2 class="font-serif text-2xl font-semibold text-stone-900">Presentations</h2>
+          <ul class="mt-3 space-y-3 text-stone-600">
+            @for (presentation of siteContent.presentations; track $index) {
+              <li>{{ presentation }}</li>
             }
           </ul>
         </section>
 
         <section id="experience" class="scroll-mt-24">
-          <h2 class="font-serif text-2xl font-semibold text-stone-900">Experience</h2>
+          <h2 class="font-serif text-2xl font-semibold text-stone-900">Teaching Experience</h2>
           <div class="mt-3 space-y-5">
             @for (entry of siteContent.experience; track $index) {
               <div>

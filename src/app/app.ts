@@ -21,13 +21,17 @@ interface SiteContent {
   university: string;
   location: string;
   email: string;
+  photoUrl: string;
   linkedinUrl: string;
   cvUrl: string;
+  academiaUrl: string;
+  blueskyUrl: string;
   about: string;
   education: EducationEntry[];
   researchSummary: string;
   thesisTitle: string;
   publications: string[];
+  presentations: string[];
   experience: ExperienceEntry[];
   skills: {
     languages: string;

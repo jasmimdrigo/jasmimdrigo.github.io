@@ -4,8 +4,11 @@
   "university": "[University Name]",
   "location": "[City, Country]",
   "email": "your.name@email.com",
+  "photoUrl": "/profile.jpeg",
   "linkedinUrl": "#",
   "cvUrl": "#",
+  "academiaUrl": "https://universityofgalway.academia.edu/JasmimDrigo",
+  "blueskyUrl": "https://bsky.app/profile/jasmimdrigo.bsky.social",
   "about": "[Write a short 2-3 sentence introduction: who you are, what you study, and what draws you to linguistics.]",
   "education": [
     {
@@ -24,14 +27,17 @@
   "researchSummary": "[1-2 sentence summary of your thesis or current research project.]",
   "thesisTitle": "[Working Title]",
   "publications": [
-    "[Author(s)]. ([Year]). [Title of paper or talk]. [Venue/Conference]."
+    "[Author(s)]. ([Year]). [Title of paper]. [Journal/Venue]."
+  ],
+  "presentations": [
+    "[Author(s)]. ([Year]). [Title of talk]. [Conference/Event]."
   ],
   "experience": [
     {
       "role": "[Role/Title]",
-      "organization": "[Organization]",
+      "organization": "[Institution]",
       "years": "[Start] - [End]",
-      "description": "[Short description of responsibilities.]"
+      "description": "[Short description of teaching responsibilities.]"
     }
   ],
   "skills": {
