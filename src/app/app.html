@@ -1,106 +1,122 @@
-<div class="min-h-screen bg-stone-50 text-stone-800">
-  <header class="sticky top-0 z-10 border-b border-stone-800/10 bg-stone-50/95 backdrop-blur">
-    <div class="mx-auto flex max-w-3xl flex-wrap items-center justify-between gap-x-6 gap-y-2 px-6 py-4">
-      <a href="#top" class="font-serif text-lg font-semibold text-stone-900">[Your Name]</a>
-      <nav>
-        <ul class="flex flex-wrap gap-x-5 gap-y-1 text-sm text-stone-600">
-          <li><a href="#about" class="hover:text-amber-800">About</a></li>
-          <li><a href="#education" class="hover:text-amber-800">Education</a></li>
-          <li><a href="#research" class="hover:text-amber-800">Research</a></li>
-          <li><a href="#publications" class="hover:text-amber-800">Publications</a></li>
-          <li><a href="#experience" class="hover:text-amber-800">Experience</a></li>
-          <li><a href="#skills" class="hover:text-amber-800">Skills</a></li>
-          <li><a href="#contact" class="hover:text-amber-800">Contact</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
-
-  <section id="top" class="border-b border-stone-800 bg-stone-900 text-stone-50">
-    <div class="mx-auto max-w-3xl px-6 py-20">
-      <p class="font-serif text-sm uppercase tracking-widest text-amber-400">Linguistics</p>
-      <h1 class="mt-3 font-serif text-4xl font-semibold sm:text-5xl">[Your Name]</h1>
-      <p class="mt-3 text-lg text-stone-300">M.A. Candidate in Linguistics · [University Name]</p>
-      <div class="mt-6 flex flex-wrap gap-x-4 gap-y-1 text-sm text-stone-400">
-        <span>[City, Country]</span>
-        <a href="mailto:your.name@email.com" class="hover:text-amber-400">[your.name@email.com]</a>
-        <a href="#" class="hover:text-amber-400">LinkedIn</a>
-        <a href="#" class="hover:text-amber-400">CV (PDF)</a>
+@if (content.error()) {
+  <div class="mx-auto max-w-3xl px-6 py-20 text-center text-stone-600">
+    <p class="font-serif text-xl font-semibold text-stone-900">Couldn't load page content.</p>
+    <p class="mt-2">
+      Check that <code class="rounded bg-stone-100 px-1.5 py-0.5">content.json</code> has valid
+      syntax (matching quotes, commas between entries, etc.).
+    </p>
+  </div>
+} @else if (content.value(); as siteContent) {
+  <div class="min-h-screen bg-stone-50 text-stone-800">
+    <header class="sticky top-0 z-10 border-b border-stone-800/10 bg-stone-50/95 backdrop-blur">
+      <div class="mx-auto flex max-w-3xl flex-wrap items-center justify-between gap-x-6 gap-y-2 px-6 py-4">
+        <a href="#top" class="font-serif text-lg font-semibold text-stone-900">{{ siteContent.name }}</a>
+        <nav>
+          <ul class="flex flex-wrap gap-x-5 gap-y-1 text-sm text-stone-600">
+            <li><a href="#about" class="hover:text-amber-800">About</a></li>
+            <li><a href="#education" class="hover:text-amber-800">Education</a></li>
+            <li><a href="#research" class="hover:text-amber-800">Research</a></li>
+            <li><a href="#publications" class="hover:text-amber-800">Publications</a></li>
+            <li><a href="#experience" class="hover:text-amber-800">Experience</a></li>
+            <li><a href="#skills" class="hover:text-amber-800">Skills</a></li>
+            <li><a href="#contact" class="hover:text-amber-800">Contact</a></li>
+          </ul>
+        </nav>
       </div>
-    </div>
-  </section>
+    </header>
 
-  <main class="mx-auto max-w-3xl px-6 py-16">
-    <div class="space-y-16">
-      <section id="about" class="scroll-mt-24">
-        <h2 class="font-serif text-2xl font-semibold text-stone-900">About</h2>
-        <p class="mt-3 leading-relaxed text-stone-600">
-          [Write a short 2-3 sentence introduction: who you are, what you study, and what draws
-          you to linguistics.]
-        </p>
-      </section>
-
-      <section id="education" class="scroll-mt-24">
-        <h2 class="font-serif text-2xl font-semibold text-stone-900">Education</h2>
-        <div class="mt-3 space-y-5">
-          <div>
-            <h3 class="font-medium text-stone-900">M.A. in Linguistics — [University Name]</h3>
-            <p class="text-sm text-stone-500">[Start Year] - [End Year]</p>
-            <p class="mt-1 text-stone-600">[Focus area, advisor, or relevant coursework.]</p>
-          </div>
-          <div>
-            <h3 class="font-medium text-stone-900">B.A. in [Field] — [University Name]</h3>
-            <p class="text-sm text-stone-500">[Start Year] - [End Year]</p>
-          </div>
+    <section id="top" class="border-b border-stone-800 bg-stone-900 text-stone-50">
+      <div class="mx-auto max-w-3xl px-6 py-20">
+        <p class="font-serif text-sm uppercase tracking-widest text-amber-400">Linguistics</p>
+        <h1 class="mt-3 font-serif text-4xl font-semibold sm:text-5xl">{{ siteContent.name }}</h1>
+        <p class="mt-3 text-lg text-stone-300">{{ siteContent.tagline }} · {{ siteContent.university }}</p>
+        <div class="mt-6 flex flex-wrap gap-x-4 gap-y-1 text-sm text-stone-400">
+          <span>{{ siteContent.location }}</span>
+          <a href="mailto:{{ siteContent.email }}" class="hover:text-amber-400">{{ siteContent.email }}</a>
+          <a [href]="siteContent.linkedinUrl" class="hover:text-amber-400">LinkedIn</a>
+          <a [href]="siteContent.cvUrl" class="hover:text-amber-400">CV (PDF)</a>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <section id="research" class="scroll-mt-24">
-        <h2 class="font-serif text-2xl font-semibold text-stone-900">Research</h2>
-        <blockquote class="mt-4 border-l-4 border-amber-700 pl-5">
-          <p class="font-serif text-lg italic text-stone-700">
-            "[1-2 sentence summary of your thesis or current research project.]"
+    <main class="mx-auto max-w-3xl px-6 py-16">
+      <div class="space-y-16">
+        <section id="about" class="scroll-mt-24">
+          <h2 class="font-serif text-2xl font-semibold text-stone-900">About</h2>
+          <p class="mt-3 leading-relaxed text-stone-600">{{ siteContent.about }}</p>
+        </section>
+
+        <section id="education" class="scroll-mt-24">
+          <h2 class="font-serif text-2xl font-semibold text-stone-900">Education</h2>
+          <div class="mt-3 space-y-5">
+            @for (entry of siteContent.education; track $index) {
+              <div>
+                <h3 class="font-medium text-stone-900">{{ entry.degree }} — {{ entry.institution }}</h3>
+                <p class="text-sm text-stone-500">{{ entry.years }}</p>
+                @if (entry.detail) {
+                  <p class="mt-1 text-stone-600">{{ entry.detail }}</p>
+                }
+              </div>
+            }
+          </div>
+        </section>
+
+        <section id="research" class="scroll-mt-24">
+          <h2 class="font-serif text-2xl font-semibold text-stone-900">Research</h2>
+          <blockquote class="mt-4 border-l-4 border-amber-700 pl-5">
+            <p class="font-serif text-lg italic text-stone-700">"{{ siteContent.researchSummary }}"</p>
+            <footer class="mt-2 text-sm text-stone-500">Thesis: {{ siteContent.thesisTitle }}</footer>
+          </blockquote>
+        </section>
+
+        <section id="publications" class="scroll-mt-24">
+          <h2 class="font-serif text-2xl font-semibold text-stone-900">Publications & Presentations</h2>
+          <ul class="mt-3 space-y-3 text-stone-600">
+            @for (pub of siteContent.publications; track $index) {
+              <li>{{ pub }}</li>
+            }
+          </ul>
+        </section>
+
+        <section id="experience" class="scroll-mt-24">
+          <h2 class="font-serif text-2xl font-semibold text-stone-900">Experience</h2>
+          <div class="mt-3 space-y-5">
+            @for (entry of siteContent.experience; track $index) {
+              <div>
+                <h3 class="font-medium text-stone-900">{{ entry.role }} — {{ entry.organization }}</h3>
+                <p class="text-sm text-stone-500">{{ entry.years }}</p>
+                <p class="mt-1 text-stone-600">{{ entry.description }}</p>
+              </div>
+            }
+          </div>
+        </section>
+
+        <section id="skills" class="scroll-mt-24">
+          <h2 class="font-serif text-2xl font-semibold text-stone-900">Skills</h2>
+          <div class="mt-3 grid grid-cols-1 gap-x-6 gap-y-2 text-stone-600 sm:grid-cols-2">
+            <p><span class="font-medium text-stone-900">Languages:</span> {{ siteContent.skills.languages }}</p>
+            <p><span class="font-medium text-stone-900">Methods:</span> {{ siteContent.skills.methods }}</p>
+            <p><span class="font-medium text-stone-900">Tools:</span> {{ siteContent.skills.tools }}</p>
+          </div>
+        </section>
+
+        <section id="contact" class="scroll-mt-24">
+          <h2 class="font-serif text-2xl font-semibold text-stone-900">Contact</h2>
+          <p class="mt-3 text-stone-600">
+            Feel free to reach out at
+            <a href="mailto:{{ siteContent.email }}" class="text-amber-800 hover:underline">{{ siteContent.email }}</a>
           </p>
-          <footer class="mt-2 text-sm text-stone-500">Thesis: [Working Title]</footer>
-        </blockquote>
-      </section>
+        </section>
+      </div>
+    </main>
 
-      <section id="publications" class="scroll-mt-24">
-        <h2 class="font-serif text-2xl font-semibold text-stone-900">Publications & Presentations</h2>
-        <ul class="mt-3 space-y-3 text-stone-600">
-          <li>[Author(s)]. ([Year]). [Title of paper or talk]. [Venue/Conference].</li>
-        </ul>
-      </section>
-
-      <section id="experience" class="scroll-mt-24">
-        <h2 class="font-serif text-2xl font-semibold text-stone-900">Experience</h2>
-        <div class="mt-3">
-          <h3 class="font-medium text-stone-900">[Role/Title] — [Organization]</h3>
-          <p class="text-sm text-stone-500">[Start] - [End]</p>
-          <p class="mt-1 text-stone-600">[Short description of responsibilities.]</p>
-        </div>
-      </section>
-
-      <section id="skills" class="scroll-mt-24">
-        <h2 class="font-serif text-2xl font-semibold text-stone-900">Skills</h2>
-        <div class="mt-3 grid grid-cols-1 gap-x-6 gap-y-2 text-stone-600 sm:grid-cols-2">
-          <p><span class="font-medium text-stone-900">Languages:</span> [English (native), ...]</p>
-          <p><span class="font-medium text-stone-900">Methods:</span> [e.g. corpus analysis, phonetic transcription]</p>
-          <p><span class="font-medium text-stone-900">Tools:</span> [e.g. Praat, ELAN, R, Python]</p>
-        </div>
-      </section>
-
-      <section id="contact" class="scroll-mt-24">
-        <h2 class="font-serif text-2xl font-semibold text-stone-900">Contact</h2>
-        <p class="mt-3 text-stone-600">
-          Feel free to reach out at
-          <a href="mailto:your.name@email.com" class="text-amber-800 hover:underline">[your.name@email.com]</a>
-        </p>
-      </section>
-    </div>
-  </main>
-
-  <footer class="border-t border-stone-200 py-8 text-center text-sm text-stone-400">
-    [Your Name] · updated [Month Year]
-  </footer>
-</div>
+    <footer class="border-t border-stone-200 py-8 text-center text-sm text-stone-400">
+      {{ siteContent.name }}
+      @if (siteContent.lastUpdated) {
+        · updated {{ siteContent.lastUpdated }}
+      }
+    </footer>
+  </div>
+} @else {
+  <div class="flex min-h-screen items-center justify-center text-stone-500">Loading…</div>
+}

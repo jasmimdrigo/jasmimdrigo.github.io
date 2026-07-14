@@ -1,0 +1,42 @@
+{
+  "name": "[Your Name]",
+  "tagline": "M.A. Candidate in Linguistics",
+  "university": "[University Name]",
+  "location": "[City, Country]",
+  "email": "your.name@email.com",
+  "linkedinUrl": "#",
+  "cvUrl": "#",
+  "about": "[Write a short 2-3 sentence introduction: who you are, what you study, and what draws you to linguistics.]",
+  "education": [
+    {
+      "degree": "M.A. in Linguistics",
+      "institution": "[University Name]",
+      "years": "[Start Year] - [End Year]",
+      "detail": "[Focus area, advisor, or relevant coursework.]"
+    },
+    {
+      "degree": "B.A. in [Field]",
+      "institution": "[University Name]",
+      "years": "[Start Year] - [End Year]",
+      "detail": ""
+    }
+  ],
+  "researchSummary": "[1-2 sentence summary of your thesis or current research project.]",
+  "thesisTitle": "[Working Title]",
+  "publications": [
+    "[Author(s)]. ([Year]). [Title of paper or talk]. [Venue/Conference]."
+  ],
+  "experience": [
+    {
+      "role": "[Role/Title]",
+      "organization": "[Organization]",
+      "years": "[Start] - [End]",
+      "description": "[Short description of responsibilities.]"
+    }
+  ],
+  "skills": {
+    "languages": "[English (native), ...]",
+    "methods": "[e.g. corpus analysis, phonetic transcription]",
+    "tools": "[e.g. Praat, ELAN, R, Python]"
+  }
+}
