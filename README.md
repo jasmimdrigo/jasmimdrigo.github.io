@@ -13,7 +13,7 @@ The site is connected to Cloudflare, which watches the `main` branch. As soon as
 1. Open `public/content.json` in the repository on GitHub.
 2. Click the pencil icon in the top right of the file view to edit it in your browser.
 3. Make your changes (see the field guide and formatting rules below).
-4. Scroll down to and click "Commit changes" to commit directly to `main`. It'll go live right away.
+4. Click on "Commit changes" and explain your modifications on the available fields, to then commit directly to `main`. It'll go live right away.
 
 No local setup or terminal needed for any of this, it all happens in the browser. If you'd rather edit locally, clone the repo, open `public/content.json` in any text editor (Notepad works fine), then commit and push the change.
 
