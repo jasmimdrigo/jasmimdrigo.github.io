@@ -8,11 +8,10 @@ interface EducationEntry {
   detail: string;
 }
 
-interface ExperienceEntry {
-  role: string;
-  organization: string;
+interface TeachingEntry {
+  title: string;
+  institution: string;
   years: string;
-  description: string;
 }
 
 interface SiteContent {
@@ -26,17 +25,20 @@ interface SiteContent {
   cvUrl: string;
   academiaUrl: string;
   blueskyUrl: string;
-  about: string;
+  about: string[];
   education: EducationEntry[];
-  researchSummary: string;
-  thesisTitle: string;
-  publications: string[];
-  presentations: string[];
-  experience: ExperienceEntry[];
-  skills: {
-    languages: string;
-    methods: string;
-    tools: string;
+  researchInterests: string[];
+  publications: {
+    peerReviewed: string[];
+    other: string[];
+  };
+  selectedPresentations: string[];
+  teaching: TeachingEntry[];
+  teachingNote: string;
+  fellowships: string[];
+  languages: {
+    modern: string;
+    historical: string;
   };
 }
 

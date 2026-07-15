@@ -12,16 +12,18 @@ const mockContent = {
   cvUrl: '#',
   academiaUrl: '#',
   blueskyUrl: '#',
-  about: 'About text.',
+  about: ['About text.'],
   education: [{ degree: 'M.A.', institution: 'Test University', years: '2024 - 2026', detail: '' }],
-  researchSummary: 'Research summary.',
-  thesisTitle: 'Thesis Title',
-  publications: ['A. Author. (2026). A paper. A journal.'],
-  presentations: ['A. Author. (2026). A talk. A conference.'],
-  experience: [
-    { role: 'Role', organization: 'Org', years: '2023 - 2024', description: 'Description.' },
-  ],
-  skills: { languages: 'English', methods: 'Methods', tools: 'Tools' },
+  researchInterests: ['A research interest.'],
+  publications: {
+    peerReviewed: ['A. Author. (2026). A paper. A journal.'],
+    other: ['A. Author. (2026). Another paper. Another venue.'],
+  },
+  selectedPresentations: ['A. Author. (2026). A talk. A conference.'],
+  teaching: [{ title: 'A Course', institution: 'Test University', years: '2026' }],
+  teachingNote: 'Also taught elsewhere.',
+  fellowships: ['A Fellowship, Test University, 2026.'],
+  languages: { modern: 'English (native).', historical: 'Latin.' },
 };
 
 describe('App', () => {

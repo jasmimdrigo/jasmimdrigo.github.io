@@ -1,48 +1,92 @@
 {
-  "name": "[Your Name]",
-  "tagline": "M.A. Candidate in Linguistics",
-  "university": "[University Name]",
-  "location": "[City, Country]",
-  "email": "your.name@email.com",
+  "name": "Jasmim Drigo",
+  "tagline": "Historical Linguist — Early Irish, Morphology & Language Contact",
+  "university": "University of Galway",
+  "location": "Galway, Ireland",
+  "email": "jasmim.sediedrigo@universityofgalway.ie",
   "photoUrl": "/profile.jpeg",
-  "linkedinUrl": "#",
-  "cvUrl": "#",
+  "linkedinUrl": "",
+  "cvUrl": "/Jasmim-Drigo-CV.pdf",
   "academiaUrl": "https://universityofgalway.academia.edu/JasmimDrigo",
   "blueskyUrl": "https://bsky.app/profile/jasmimdrigo.bsky.social",
-  "about": "[Write a short 2-3 sentence introduction: who you are, what you study, and what draws you to linguistics.]",
+  "about": [
+    "Historical linguist specialized in Early Irish, especially interested in morphology and language contact.",
+    "I am currently a postdoctoral researcher at the University of Galway, working on the Old Irish glosses, funded by Research Ireland (2024–2026) and under the mentorship of Dr. Pádraic Moran. My current work focuses on Latin borrowings into Old Irish."
+  ],
   "education": [
     {
-      "degree": "M.A. in Linguistics",
-      "institution": "[University Name]",
-      "years": "[Start Year] - [End Year]",
-      "detail": "[Focus area, advisor, or relevant coursework.]"
+      "degree": "PhD in Linguistics",
+      "institution": "Cornell University, USA",
+      "years": "2024",
+      "detail": "Dissertation: i-stem adjectives in Indo-European. Chair: Prof. Dr. Michael Weiss."
     },
     {
-      "degree": "B.A. in [Field]",
-      "institution": "[University Name]",
-      "years": "[Start Year] - [End Year]",
+      "degree": "MA in Linguistics",
+      "institution": "Cornell University, USA",
+      "years": "2020",
+      "detail": "Thesis: i-stem adjectives in Early Irish."
+    },
+    {
+      "degree": "MA in Classics",
+      "institution": "University of São Paulo, Brazil",
+      "years": "2016",
+      "detail": "Period abroad at Cornell University. Thesis approved with honors."
+    },
+    {
+      "degree": "BA in Ancient Greek and Portuguese",
+      "institution": "University of São Paulo, Brazil",
+      "years": "2013",
+      "detail": ""
+    },
+    {
+      "degree": "Diploma in Irish B1 (in progress)",
+      "institution": "University of Galway, Ireland",
+      "years": "expected 2026",
       "detail": ""
     }
   ],
-  "researchSummary": "[1-2 sentence summary of your thesis or current research project.]",
-  "thesisTitle": "[Working Title]",
-  "publications": [
-    "[Author(s)]. ([Year]). [Title of paper]. [Journal/Venue]."
+  "researchInterests": [
+    "Historical morphology of Early Irish and other Celtic languages.",
+    "Language contact and borrowings in Celtic languages."
   ],
-  "presentations": [
-    "[Author(s)]. ([Year]). [Title of talk]. [Conference/Event]."
+  "publications": {
+    "peerReviewed": [
+      "Drigo, J. (forth.). \"The Sociolinguistics of Irish Contact in Early Medieval Ireland\". Torrance, I. (Ed.). Special issue in Journal of Irish and Scottish Studies.",
+      "Drigo, J. & Qu, Y. (2025). \"Types of Relativization and Relative Heads in the Sabellic Languages.\" Journal of Historical Syntax, 9, 1–40.",
+      "Drigo, J. & Qu, Y. (2024). \"Old Irish Nasalizing Relative Clauses.\" Proceedings of the 34th Annual UCLA Indo-European Conference. Hamburg: Buske, 79–98.",
+      "Drigo, J. (2018). \"As Línguas da Itália Antiga: um breve panorama.\" Mare Nostrum 8, 9, 117–130.",
+      "Drigo, J. & Pagnossi, N. (2018). \"Tradução do texto: Reflexões sobre os Negros\". In: História & Ensino 24, 283–288.",
+      "Drigo, J. (2014). \"A Morte de Apsirto nas Argonáuticas de Apolônio de Rodes.\" Cadernos de Pós Graduação em Letras, Mackenzie 14, 72–84."
+    ],
+    "other": [
+      "Drigo, J. (2026). \"Borrowed Beliefs: The Journey of Christian Words into Irish\". Western Classics."
+    ]
+  },
+  "selectedPresentations": [
+    "\"Loanwords in Early Irish.\" CAMPS/CALM Seminar: Historical and Contemporary Multilingualism in Ireland. University of Galway, Ireland (2026).",
+    "\"The Sociolinguistics of Irish-Latin Contact in Early Medieval Ireland.\" Invited Talk, Aarhus, Denmark (2025).",
+    "\"Latin borrowings into Old Irish: religious and grammatical terms.\" 4th European Symposium in Celtic Studies, Bonn, Germany (2025).",
+    "\"Old Irish Nasalizing Relative Clauses.\" WeCIEC 34, UCLA, Los Angeles (2023)."
   ],
-  "experience": [
-    {
-      "role": "[Role/Title]",
-      "organization": "[Institution]",
-      "years": "[Start] - [End]",
-      "description": "[Short description of teaching responsibilities.]"
-    }
+  "teaching": [
+    { "title": "Intro to Early Irish 2 (CCIV30100)", "institution": "University College Dublin, Ireland", "years": "Spring 2026" },
+    { "title": "Poets, Power and Performance (CCIV20070)", "institution": "University College Dublin, Ireland", "years": "Spring 2026" },
+    { "title": "Advanced Latin (CCS311)", "institution": "University of Galway, Ireland", "years": "Autumn 2025" },
+    { "title": "Old Irish I (SG222 / MV507)", "institution": "University of Galway, Ireland", "years": "Spring 2025" },
+    { "title": "Introduction to Linguistics (LING 1101)", "institution": "Cornell Prison Education Program", "years": "Summer 2022" },
+    { "title": "Conversations in Moral Psychology (PSYCH 1200)", "institution": "Cornell University", "years": "Spring 2022" },
+    { "title": "Osco: Uma Língua da Itália Antiga", "institution": "University of São Paulo, Brazil", "years": "Autumn 2017" }
   ],
-  "skills": {
-    "languages": "[English (native), ...]",
-    "methods": "[e.g. corpus analysis, phonetic transcription]",
-    "tools": "[e.g. Praat, ELAN, R, Python]"
+  "teachingNote": "Also served as a Teaching Assistant at Cornell University (Introduction to Linguistics, Introduction to Historical Linguistics, Greek and Roman Philosophy; 2018–2021) and at the University of São Paulo (Ancient Greek I–IV; 2012–2014), and gave guest lectures at the University of Galway (Milan Glosses, 2025–2026; Early & Medieval History of the Celts, 2024).",
+  "fellowships": [
+    "Postdoctoral Fellowship, Research Ireland. University of Galway, 2024–2026.",
+    "Gradaim Aitheantais Gaeilge do Bhaill Foirne, University of Galway, 2026.",
+    "Cornell SAGE Graduate Fellowship (incl. summer awards), Cornell University, 2017–2023.",
+    "LASP Graduate Fellowship, Cornell University, 2021–2022.",
+    "FAPESP (São Paulo Research Foundation) Fellowships — Undergraduate, Master's, and Research Abroad, 2010–2016."
+  ],
+  "languages": {
+    "modern": "Brazilian Portuguese (native), English (C2), Spanish (C1), Italian (B2), Irish (B1), German (B1), French (A2).",
+    "historical": "Strong reading and research ability in Latin, Ancient Greek, Old/Middle Irish, Old/Middle Welsh, Sabellic languages, Hittite, and Vedic; also familiar with Avestan, Gothic, Old Church Slavonic, Old English, Old Norse, Old Armenian, and Old Occitan."
   }
 }

@@ -18,8 +18,9 @@
             <li><a href="#research" class="hover:text-amber-800">Research</a></li>
             <li><a href="#publications" class="hover:text-amber-800">Publications</a></li>
             <li><a href="#presentations" class="hover:text-amber-800">Presentations</a></li>
-            <li><a href="#experience" class="hover:text-amber-800">Teaching Experience</a></li>
-            <li><a href="#skills" class="hover:text-amber-800">Skills</a></li>
+            <li><a href="#teaching" class="hover:text-amber-800">Teaching</a></li>
+            <li><a href="#fellowships" class="hover:text-amber-800">Fellowships</a></li>
+            <li><a href="#languages" class="hover:text-amber-800">Languages</a></li>
             <li><a href="#contact" class="hover:text-amber-800">Contact</a></li>
           </ul>
         </nav>
@@ -35,10 +36,13 @@
           <div class="mt-6 flex flex-wrap gap-x-4 gap-y-1 text-sm text-stone-400">
             <span>{{ siteContent.location }}</span>
             <a href="mailto:{{ siteContent.email }}" class="hover:text-amber-400">{{ siteContent.email }}</a>
+            @if (siteContent.linkedinUrl) {
             <a [href]="siteContent.linkedinUrl" class="hover:text-amber-400">LinkedIn</a>
+            }
             <a [href]="siteContent.academiaUrl" class="hover:text-amber-400">Academia.edu</a>
             <a [href]="siteContent.blueskyUrl" class="hover:text-amber-400">Bluesky</a>
-            <a [href]="siteContent.cvUrl" class="hover:text-amber-400">CV (PDF)</a>
+            
+          <a [href]="siteContent.cvUrl" class="hover:text-amber-400">CV (PDF)</a>
           </div>
         </div>
         @if (siteContent.photoUrl) {
@@ -55,7 +59,11 @@
       <div class="space-y-16">
         <section id="about" class="scroll-mt-24">
           <h2 class="font-serif text-2xl font-semibold text-stone-900">About</h2>
-          <p class="mt-3 leading-relaxed text-stone-600">{{ siteContent.about }}</p>
+          <div class="mt-3 space-y-3 leading-relaxed text-stone-600">
+            @for (paragraph of siteContent.about; track $index) {
+              <p>{{ paragraph }}</p>
+            }
+          </div>
         </section>
 
         <section id="education" class="scroll-mt-24">
@@ -74,50 +82,72 @@
         </section>
 
         <section id="research" class="scroll-mt-24">
-          <h2 class="font-serif text-2xl font-semibold text-stone-900">Research</h2>
-          <blockquote class="mt-4 border-l-4 border-amber-700 pl-5">
-            <p class="font-serif text-lg italic text-stone-700">"{{ siteContent.researchSummary }}"</p>
-            <footer class="mt-2 text-sm text-stone-500">Thesis: {{ siteContent.thesisTitle }}</footer>
-          </blockquote>
+          <h2 class="font-serif text-2xl font-semibold text-stone-900">Research Interests</h2>
+          <ul class="mt-3 list-disc space-y-2 pl-5 text-stone-600">
+            @for (interest of siteContent.researchInterests; track $index) {
+              <li>{{ interest }}</li>
+            }
+          </ul>
         </section>
 
         <section id="publications" class="scroll-mt-24">
           <h2 class="font-serif text-2xl font-semibold text-stone-900">Publications</h2>
+
+          <h3 class="mt-6 font-serif text-lg font-semibold text-stone-900">Peer-Reviewed Publications</h3>
           <ul class="mt-3 space-y-3 text-stone-600">
-            @for (publication of siteContent.publications; track $index) {
+            @for (publication of siteContent.publications.peerReviewed; track $index) {
+              <li>{{ publication }}</li>
+            }
+          </ul>
+
+          <h3 class="mt-6 font-serif text-lg font-semibold text-stone-900">Other Publications</h3>
+          <ul class="mt-3 space-y-3 text-stone-600">
+            @for (publication of siteContent.publications.other; track $index) {
               <li>{{ publication }}</li>
             }
           </ul>
         </section>
 
         <section id="presentations" class="scroll-mt-24">
-          <h2 class="font-serif text-2xl font-semibold text-stone-900">Presentations</h2>
+          <h2 class="font-serif text-2xl font-semibold text-stone-900">Selected Presentations</h2>
           <ul class="mt-3 space-y-3 text-stone-600">
-            @for (presentation of siteContent.presentations; track $index) {
-              <li>{{ presentation }}</li>
+            @for (talk of siteContent.selectedPresentations; track $index) {
+              <li>{{ talk }}</li>
+            }
+          </ul>
+          <p class="mt-3 text-sm text-stone-500">
+            Full presentation history available in the
+            <a [href]="siteContent.cvUrl" class="text-amber-800 hover:underline">CV (PDF)</a>.
+          </p>
+        </section>
+
+        <section id="teaching" class="scroll-mt-24">
+          <h2 class="font-serif text-2xl font-semibold text-stone-900">Teaching</h2>
+          <div class="mt-3 space-y-5">
+            @for (entry of siteContent.teaching; track $index) {
+              <div>
+                <h3 class="font-medium text-stone-900">{{ entry.title }} — {{ entry.institution }}</h3>
+                <p class="text-sm text-stone-500">{{ entry.years }}</p>
+              </div>
+            }
+          </div>
+          <p class="mt-5 text-stone-600">{{ siteContent.teachingNote }}</p>
+        </section>
+
+        <section id="fellowships" class="scroll-mt-24">
+          <h2 class="font-serif text-2xl font-semibold text-stone-900">Fellowships & Awards</h2>
+          <ul class="mt-3 space-y-3 text-stone-600">
+            @for (fellowship of siteContent.fellowships; track $index) {
+              <li>{{ fellowship }}</li>
             }
           </ul>
         </section>
 
-        <section id="experience" class="scroll-mt-24">
-          <h2 class="font-serif text-2xl font-semibold text-stone-900">Teaching Experience</h2>
-          <div class="mt-3 space-y-5">
-            @for (entry of siteContent.experience; track $index) {
-              <div>
-                <h3 class="font-medium text-stone-900">{{ entry.role }} — {{ entry.organization }}</h3>
-                <p class="text-sm text-stone-500">{{ entry.years }}</p>
-                <p class="mt-1 text-stone-600">{{ entry.description }}</p>
-              </div>
-            }
-          </div>
-        </section>
-
-        <section id="skills" class="scroll-mt-24">
-          <h2 class="font-serif text-2xl font-semibold text-stone-900">Skills</h2>
-          <div class="mt-3 grid grid-cols-1 gap-x-6 gap-y-2 text-stone-600 sm:grid-cols-2">
-            <p><span class="font-medium text-stone-900">Languages:</span> {{ siteContent.skills.languages }}</p>
-            <p><span class="font-medium text-stone-900">Methods:</span> {{ siteContent.skills.methods }}</p>
-            <p><span class="font-medium text-stone-900">Tools:</span> {{ siteContent.skills.tools }}</p>
+        <section id="languages" class="scroll-mt-24">
+          <h2 class="font-serif text-2xl font-semibold text-stone-900">Languages</h2>
+          <div class="mt-3 space-y-3 text-stone-600">
+            <p><span class="font-medium text-stone-900">Modern:</span> {{ siteContent.languages.modern }}</p>
+            <p><span class="font-medium text-stone-900">Historical:</span> {{ siteContent.languages.historical }}</p>
           </div>
         </section>
 
