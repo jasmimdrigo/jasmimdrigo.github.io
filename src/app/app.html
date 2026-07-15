@@ -9,8 +9,12 @@
 } @else if (content.value(); as siteContent) {
   <div class="min-h-screen bg-stone-50 text-stone-800">
     <header class="sticky top-0 z-10 border-b border-stone-800/10 bg-stone-50/95 backdrop-blur">
-      <div class="mx-auto flex max-w-3xl flex-wrap items-center justify-between gap-x-6 gap-y-2 px-6 py-4">
-        <a href="#top" class="font-serif text-lg font-semibold text-stone-900">{{ siteContent.name }}</a>
+      <div
+        class="mx-auto flex max-w-3xl flex-wrap items-center justify-between gap-x-6 gap-y-2 px-6 py-4"
+      >
+        <a href="#top" class="font-serif text-lg font-semibold text-stone-900">{{
+          siteContent.name
+        }}</a>
         <nav>
           <ul class="flex flex-wrap gap-x-5 gap-y-1 text-sm text-stone-600">
             <li><a href="#about" class="hover:text-amber-800">About</a></li>
@@ -28,21 +32,27 @@
     </header>
 
     <section id="top" class="border-b border-stone-800 bg-stone-900 text-stone-50">
-      <div class="mx-auto flex max-w-3xl flex-col-reverse items-start gap-8 px-6 py-20 sm:flex-row sm:items-center sm:justify-between">
+      <div
+        class="mx-auto flex max-w-3xl flex-col-reverse items-start gap-8 px-6 py-20 sm:flex-row sm:items-center sm:justify-between"
+      >
         <div>
           <p class="font-serif text-sm uppercase tracking-widest text-amber-400">Linguistics</p>
           <h1 class="mt-3 font-serif text-4xl font-semibold sm:text-5xl">{{ siteContent.name }}</h1>
-          <p class="mt-3 text-lg text-stone-300">{{ siteContent.tagline }} · {{ siteContent.university }}</p>
+          <p class="mt-3 text-lg text-stone-300">
+            {{ siteContent.tagline }} · {{ siteContent.university }}
+          </p>
           <div class="mt-6 flex flex-wrap gap-x-4 gap-y-1 text-sm text-stone-400">
             <span>{{ siteContent.location }}</span>
-            <a href="mailto:{{ siteContent.email }}" class="hover:text-amber-400">{{ siteContent.email }}</a>
+            <a href="mailto:{{ siteContent.email }}" class="hover:text-amber-400">{{
+              siteContent.email
+            }}</a>
             @if (siteContent.linkedinUrl) {
-            <a [href]="siteContent.linkedinUrl" class="hover:text-amber-400">LinkedIn</a>
+              <a [href]="siteContent.linkedinUrl" class="hover:text-amber-400">LinkedIn</a>
             }
             <a [href]="siteContent.academiaUrl" class="hover:text-amber-400">Academia.edu</a>
             <a [href]="siteContent.blueskyUrl" class="hover:text-amber-400">Bluesky</a>
-            
-          <a [href]="siteContent.cvUrl" class="hover:text-amber-400">CV (PDF)</a>
+
+            <a [href]="siteContent.cvUrl" class="hover:text-amber-400">CV (PDF)</a>
           </div>
         </div>
         @if (siteContent.photoUrl) {
@@ -71,7 +81,9 @@
           <div class="mt-3 space-y-5">
             @for (entry of siteContent.education; track $index) {
               <div>
-                <h3 class="font-medium text-stone-900">{{ entry.degree }} — {{ entry.institution }}</h3>
+                <h3 class="font-medium text-stone-900">
+                  {{ entry.degree }} — {{ entry.institution }}
+                </h3>
                 <p class="text-sm text-stone-500">{{ entry.years }}</p>
                 @if (entry.detail) {
                   <p class="mt-1 text-stone-600">{{ entry.detail }}</p>
@@ -93,7 +105,9 @@
         <section id="publications" class="scroll-mt-24">
           <h2 class="font-serif text-2xl font-semibold text-stone-900">Publications</h2>
 
-          <h3 class="mt-6 font-serif text-lg font-semibold text-stone-900">Peer-Reviewed Publications</h3>
+          <h3 class="mt-6 font-serif text-lg font-semibold text-stone-900">
+            Peer-Reviewed Publications
+          </h3>
           <ul class="mt-3 space-y-3 text-stone-600">
             @for (publication of siteContent.publications.peerReviewed; track $index) {
               <li>{{ publication }}</li>
@@ -126,7 +140,9 @@
           <div class="mt-3 space-y-5">
             @for (entry of siteContent.teaching; track $index) {
               <div>
-                <h3 class="font-medium text-stone-900">{{ entry.title }} — {{ entry.institution }}</h3>
+                <h3 class="font-medium text-stone-900">
+                  {{ entry.title }} — {{ entry.institution }}
+                </h3>
                 <p class="text-sm text-stone-500">{{ entry.years }}</p>
               </div>
             }
@@ -146,8 +162,14 @@
         <section id="languages" class="scroll-mt-24">
           <h2 class="font-serif text-2xl font-semibold text-stone-900">Languages</h2>
           <div class="mt-3 space-y-3 text-stone-600">
-            <p><span class="font-medium text-stone-900">Modern:</span> {{ siteContent.languages.modern }}</p>
-            <p><span class="font-medium text-stone-900">Historical:</span> {{ siteContent.languages.historical }}</p>
+            <p>
+              <span class="font-medium text-stone-900">Modern:</span>
+              {{ siteContent.languages.modern }}
+            </p>
+            <p>
+              <span class="font-medium text-stone-900">Historical:</span>
+              {{ siteContent.languages.historical }}
+            </p>
           </div>
         </section>
 
@@ -155,7 +177,9 @@
           <h2 class="font-serif text-2xl font-semibold text-stone-900">Contact</h2>
           <p class="mt-3 text-stone-600">
             Feel free to reach out at
-            <a href="mailto:{{ siteContent.email }}" class="text-amber-800 hover:underline">{{ siteContent.email }}</a>
+            <a href="mailto:{{ siteContent.email }}" class="text-amber-800 hover:underline">{{
+              siteContent.email
+            }}</a>
           </p>
         </section>
       </div>

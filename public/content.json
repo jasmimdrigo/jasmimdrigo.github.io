@@ -69,13 +69,41 @@
     "\"Old Irish Nasalizing Relative Clauses.\" WeCIEC 34, UCLA, Los Angeles (2023)."
   ],
   "teaching": [
-    { "title": "Intro to Early Irish 2 (CCIV30100)", "institution": "University College Dublin, Ireland", "years": "Spring 2026" },
-    { "title": "Poets, Power and Performance (CCIV20070)", "institution": "University College Dublin, Ireland", "years": "Spring 2026" },
-    { "title": "Advanced Latin (CCS311)", "institution": "University of Galway, Ireland", "years": "Autumn 2025" },
-    { "title": "Old Irish I (SG222 / MV507)", "institution": "University of Galway, Ireland", "years": "Spring 2025" },
-    { "title": "Introduction to Linguistics (LING 1101)", "institution": "Cornell Prison Education Program", "years": "Summer 2022" },
-    { "title": "Conversations in Moral Psychology (PSYCH 1200)", "institution": "Cornell University", "years": "Spring 2022" },
-    { "title": "Osco: Uma Língua da Itália Antiga", "institution": "University of São Paulo, Brazil", "years": "Autumn 2017" }
+    {
+      "title": "Intro to Early Irish 2 (CCIV30100)",
+      "institution": "University College Dublin, Ireland",
+      "years": "Spring 2026"
+    },
+    {
+      "title": "Poets, Power and Performance (CCIV20070)",
+      "institution": "University College Dublin, Ireland",
+      "years": "Spring 2026"
+    },
+    {
+      "title": "Advanced Latin (CCS311)",
+      "institution": "University of Galway, Ireland",
+      "years": "Autumn 2025"
+    },
+    {
+      "title": "Old Irish I (SG222 / MV507)",
+      "institution": "University of Galway, Ireland",
+      "years": "Spring 2025"
+    },
+    {
+      "title": "Introduction to Linguistics (LING 1101)",
+      "institution": "Cornell Prison Education Program",
+      "years": "Summer 2022"
+    },
+    {
+      "title": "Conversations in Moral Psychology (PSYCH 1200)",
+      "institution": "Cornell University",
+      "years": "Spring 2022"
+    },
+    {
+      "title": "Osco: Uma Língua da Itália Antiga",
+      "institution": "University of São Paulo, Brazil",
+      "years": "Autumn 2017"
+    }
   ],
   "teachingNote": "Also served as a Teaching Assistant at Cornell University (Introduction to Linguistics, Introduction to Historical Linguistics, Greek and Roman Philosophy; 2018–2021) and at the University of São Paulo (Ancient Greek I–IV; 2012–2014), and gave guest lectures at the University of Galway (Milan Glosses, 2025–2026; Early & Medieval History of the Celts, 2024).",
   "fellowships": [
