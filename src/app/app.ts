@@ -50,11 +50,13 @@ async function loadContent(): Promise<LoadedContent> {
     throw new Error(`Failed to load content.json: ${res.status}`);
   }
   const lastModified = res.headers.get('last-modified');
-  const lastUpdated = lastModified
-    ? new Intl.DateTimeFormat('en-US', { month: 'long', year: 'numeric' }).format(
-        new Date(lastModified),
-      )
-    : null;
+  const lastModifiedDate = lastModified ? new Date(lastModified) : null;
+  const lastUpdated =
+    lastModifiedDate && !isNaN(lastModifiedDate.getTime())
+      ? new Intl.DateTimeFormat('en-US', { month: 'long', year: 'numeric' }).format(
+          lastModifiedDate,
+        )
+      : null;
   const data = (await res.json()) as SiteContent;
   return { ...data, lastUpdated };
 }

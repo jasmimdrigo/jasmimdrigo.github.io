@@ -49,10 +49,15 @@
             @if (siteContent.linkedinUrl) {
               <a [href]="siteContent.linkedinUrl" class="hover:text-amber-400">LinkedIn</a>
             }
-            <a [href]="siteContent.academiaUrl" class="hover:text-amber-400">Academia.edu</a>
-            <a [href]="siteContent.blueskyUrl" class="hover:text-amber-400">Bluesky</a>
-
-            <a [href]="siteContent.cvUrl" class="hover:text-amber-400">CV (PDF)</a>
+            @if (siteContent.academiaUrl) {
+              <a [href]="siteContent.academiaUrl" class="hover:text-amber-400">Academia.edu</a>
+            }
+            @if (siteContent.blueskyUrl) {
+              <a [href]="siteContent.blueskyUrl" class="hover:text-amber-400">Bluesky</a>
+            }
+            @if (siteContent.cvUrl) {
+              <a [href]="siteContent.cvUrl" class="hover:text-amber-400">CV (PDF)</a>
+            }
           </div>
         </div>
         @if (siteContent.photoUrl) {
@@ -129,10 +134,12 @@
               <li>{{ talk }}</li>
             }
           </ul>
-          <p class="mt-3 text-sm text-stone-500">
-            Full presentation history available in the
-            <a [href]="siteContent.cvUrl" class="text-amber-800 hover:underline">CV (PDF)</a>.
-          </p>
+          @if (siteContent.cvUrl) {
+            <p class="mt-3 text-sm text-stone-500">
+              Full presentation history available in the
+              <a [href]="siteContent.cvUrl" class="text-amber-800 hover:underline">CV (PDF)</a>.
+            </p>
+          }
         </section>
 
         <section id="teaching" class="scroll-mt-24">
