@@ -45,7 +45,7 @@ interface SiteContent {
 type LoadedContent = SiteContent & { lastUpdated: string | null };
 
 async function loadContent(): Promise<LoadedContent> {
-  const res = await fetch('/content.json');
+  const res = await fetch('content.json');
   if (!res.ok) {
     throw new Error(`Failed to load content.json: ${res.status}`);
   }

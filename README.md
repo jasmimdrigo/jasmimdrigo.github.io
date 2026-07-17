@@ -6,7 +6,7 @@ A single-page academic portfolio/CV site, built with Angular. The site's content
 
 All of the content on the page lives in one file: `public/content.json`.
 
-The site is connected to Cloudflare, which watches the `main` branch. As soon as a change lands on `main`, the live site rebuilds and updates on its own, usually within a minute or two.
+The site is deployed via a GitHub Actions workflow (`.github/workflows/static.yml`) that watches the `main` branch. As soon as a change lands on `main`, the workflow rebuilds the site and publishes it to GitHub Pages, usually within a minute or two.
 
 ### How to edit it
 
